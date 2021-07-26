@@ -9,7 +9,7 @@ How to install
 
     Open termux & copy paste this :
 
-    curl -L https://raw.githubusercontent.com/N09527/youtube-dl/main/install.sh?token=AU7JZBFOKJ4HKXT33D4PUITA73JRO | bash
+    curl -L https://raw.githubusercontent.com/N09527/y-dl-bestq/main/install.sh | bash
 
 How to use
 
