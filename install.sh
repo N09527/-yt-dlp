@@ -4,7 +4,7 @@ set -euo pipefail
 BLUE='\e[34m'
 NC='\e[0m'
 WORKING_DIR=$(echo $(pwd))
-YOUTUBEDL_OUTPUT_FOLDER="${WORKING_DIR}/storage/shared/Download/Video"
+YOUTUBEDL_OUTPUT_FOLDER="${WORKING_DIR}/storage/emulated/0/Download/Video"
 YOUTUBEDL_CONFIG_FOLDER="${WORKING_DIR}/.config/youtube-dl/"
 TERMUXURLOPENER_CONFIG_FOLDER="${WORKING_DIR}/bin/"
 
