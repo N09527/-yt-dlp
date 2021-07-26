@@ -16,7 +16,7 @@ echo -e "${NC}    2. A working internet connection.\n\n"
 read -p "When you are ready just press enter:"
 
 # Basic setup
-# termux-setup-storage (enable first time)
+termux-setup-storage
 sleep 2
 apt-get update
 apt-get -y install python ffmpeg
