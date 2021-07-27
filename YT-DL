@@ -14,7 +14,6 @@ echo " "
 command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Video/%(title)s.%(ext)s -f'
     echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
     youtube-dl $1
-echo " "
-echo " "
-tmux send-keys 	"exit" ENTER
+
+read -p "[Press enter]"
 #Original Code Contributed By https://www.reddit.com/user/MagnificentBastard69
