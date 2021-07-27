@@ -2,51 +2,51 @@
 
 
 echo " "
-echo "Ready to download"
-echo "Audio files are saved in Downloads/Media/Audio"
-echo "Video files are saved in Downloads/Media/Video"
+#echo "Ready to download"
+#echo "Audio files are saved in Downloads/Media/Video"
+echo "Video files are saved in Downloads/Media/Audio"
 echo " "
-echo "For MP4 Video press 1"
-echo "For M4A Audio press 2"
-echo "For MP3 Audio press 3"
-echo "For MP3 & MP4 press 4"
-echo "For M4A & MP4 press 5"
-echo " "
+#echo "For MP4 Video press 1"
+#echo "For M4A Audio press 2"
+#echo "For MP3 Audio press 3"
+#echo "For MP3 & MP4 press 4"
+#echo "For M4A & MP4 press 5"
+#echo " "
 command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Video/%(title)s.%(ext)s -f'
-read option
+#read option
 
-if [ "$option" -eq "1" ]
-then
-    clear
+#if [ "$option" -eq "1" ]
+#then
+#    clear
     echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
-    youtube-dl $1
+    youtube-dl $1 && exit
  
-elif [ "$option" -eq "2" ]
-then
-    clear
-    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -f140 -x" > ~/.config/youtube-dl/config
-    youtube-dl $1
+#elif [ "$option" -eq "2" ]
+#then
+#    clear
+#    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -f140 -x" > ~/.config/youtube-dl/config
+#    youtube-dl $1
 
-elif [ "$option" -eq "3" ]
-then
-    clear
-    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -x --audio-format mp3 --audio-quality 192K --prefer-ffmpeg" > ~/.config/youtube-dl/config
-    youtube-dl $1
+#elif [ "$option" -eq "3" ]
+#then
+#    clear
+#    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -x --audio-format mp3 --audio-quality 192K --prefer-ffmpeg" > ~/.config/youtube-dl/config
+#    youtube-dl $1
 
-elif [ "$option" -eq "4" ]
-then
-    clear
-    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -x --audio-format mp3 --audio-quality 192K --prefer-ffmpeg" > ~/.config/youtube-dl/config
-    youtube-dl $1
-	echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
-    youtube-dl $1
+#elif [ "$option" -eq "4" ]
+#then
+#    clear
+#    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -x --audio-format mp3 --audio-quality 192K --prefer-ffmpeg" > ~/.config/youtube-dl/config
+#    youtube-dl $1
+#	echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
+#    youtube-dl $1
 
-elif [ "$option" -eq "5" ]
-then
-    clear
-    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -f140 -x" > ~/.config/youtube-dl/config
-    youtube-dl $1
-	echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
-    youtube-dl $1
+#elif [ "$option" -eq "5" ]
+#then
+#    clear
+#    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -f140 -x" > ~/.config/youtube-dl/config
+#    youtube-dl $1
+#	echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
+#    youtube-dl $1
 
-fi
+#fi
