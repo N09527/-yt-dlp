@@ -1,1 +1,0 @@
---no-mtime -o /data/data/com.termux/files/home/storage/shared/Download/%(title)s.%(ext)s -f "bestvideo[height<=1280][ext=mp4]+bestaudio[ext=m4a]"
