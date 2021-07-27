@@ -17,4 +17,4 @@ youtube-dl $1
 echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
 youtube-dl $1
 
-Original Code Contributed By https://www.reddit.com/user/MagnificentBastard69
+#Original Code Contributed By https://www.reddit.com/user/MagnificentBastard69
