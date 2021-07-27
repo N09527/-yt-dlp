@@ -22,7 +22,7 @@ mkdir -p ~/.config/youtube-dl
 mkdir ~/bin
 
 
-curl https://raw.githubusercontent.com/N09527/y-dl-bestq/main/YT-DL?token=AU7JZBGVJZ24NGHCOEKW6UTA76FES -o ~/bin/termux-url-opener
+curl https://raw.githubusercontent.com/N09527/y-dl-bestq/main/YT-DL?token=AU7JZBASHS4NBLHI5T7WUYDA76JGY -o ~/bin/termux-url-opener
 
 
 
