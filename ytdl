@@ -19,7 +19,7 @@ command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/V
 #then
 #    clear
     echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
-    youtube-dl $1
+    youtube-dl $1 && exit
  
 #elif [ "$option" -eq "2" ]
 #then
