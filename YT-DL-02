@@ -12,11 +12,6 @@ echo "Audio files are saved in Downloads/Media/Audio"
 echo "Video files are saved in Downloads/Media/Video"
 echo " "
 echo " "
-echo "For MP3 Audio press 1"
-echo "For M4A Audio press 2"
-echo "For MP4 Video press 3"
-echo "For MP3 & MP4 press 4"
-echo "For M4A & MP4 press 5"
 echo " "
 command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Video/%(title)s.%(ext)s -f'
 
