@@ -24,13 +24,11 @@ command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/V
 #then
 #    clear
 #    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -f140 -x" > ~/.config/youtube-dl/config
-#    youtube-dl $1
 
 #elif [ "$option" -eq "3" ]
 #then
 #    clear
 #    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -x --audio-format mp3 --audio-quality 192K --prefer-ffmpeg" > ~/.config/youtube-dl/config
-#    youtube-dl $1
 
 #elif [ "$option" -eq "4" ]
 #then
@@ -38,7 +36,6 @@ command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/V
 #    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -x --audio-format mp3 --audio-quality 192K --prefer-ffmpeg" > ~/.config/youtube-dl/config
 #    youtube-dl $1
 #	echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
-#    youtube-dl $1
 
 #elif [ "$option" -eq "5" ]
 #then
@@ -46,7 +43,27 @@ command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/V
 #    echo "--no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/Audio/%(title)s.%(ext)s -f140 -x" > ~/.config/youtube-dl/config
 #    youtube-dl $1
 #	echo "$command \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best\"" > ~/.config/youtube-dl/config
-#    youtube-dl $1
 
 #fi
-    youtube-dl $1 && exit
+    youtube-dl $1 | grep --line-buffered -oP '^\[download\].*?\K([0-9.]+|#\d+ of \d)' > progress&
+
+r="^[-+]?[0-9]+\.?[0-9]*$"
+COUNTER=0
+while [ $COUNTER -lt 101 ]
+do
+     progress=$(tail -n 1 progress)
+     COUNTER=$(printf %.0f $progress)
+	if [[ $COUNTER == 100 ]]; then
+	   rm progress
+	   am broadcast --user 0 -a Termux.NOTIFY -e title "Finished" -e text "Dowload complete" > /dev/null
+	   exit 0
+	fi
+	if ! [[ $COUNTER =~ $r ]] || [[ $COUNTER -gt 100 ]]; then
+	   COUNTER=0
+	 else
+	   COUNTER=$COUNTER
+	   am broadcast --user 0 -a Termux.NOTIFY -e title "Downloading..." -e text "Termux test download" -e percent "$COUNTER" > /dev/null
+	fi
+     echo $COUNTER
+     sleep 1
+done && exit
