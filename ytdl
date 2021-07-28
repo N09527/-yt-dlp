@@ -3,8 +3,8 @@
 
 echo " "
 #echo "Ready to download"
-#echo "Audio files are saved in Downloads/Media/Video"
-echo "Video files are saved in Downloads/Media/Audio"
+echo "Audio files are saved in Downloads/Media/Video"
+#echo "Video files are saved in Downloads/Media/Audio"
 echo " "
 #echo "For MP4 Video press 1"
 #echo "For M4A Audio press 2"
@@ -46,7 +46,6 @@ command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Media/V
 
 #fi
     youtube-dl $1 | grep --line-buffered -oP '^\[download\].*?\K([0-9.]+|#\d+ of \d)' > progress&
-     sleep 5
 r="^[-+]?[0-9]+\.?[0-9]*$"
 COUNTER=0
 while [ $COUNTER -lt 101 ]
