@@ -1,7 +1,7 @@
 
 termux-setup-storage
 
-
+apt update && apt upgrade -y
 
 pkg install -y ffmpeg
 
@@ -12,8 +12,6 @@ pkg install -y python
 python -m pip install --upgrade pip
 
 yes | pip install youtube-dl
-
-apt update && apt upgrade -y
 
 
 mkdir -p ~/.config/youtube-dl
