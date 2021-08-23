@@ -9,9 +9,9 @@ pkg install -y ffmpeg
 pkg install -y python
 
 
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip yes
 
-yes | pip install youtube-dl
+pip install youtube-dl
 
 
 mkdir -p ~/.config/youtube-dl
