@@ -13,7 +13,7 @@ echo " "
 #echo "For M4A & MP4 press 5"
 #echo " "
 #command='-no-mtime -o /data/data/com.termux/files/home/storage/downloads/Video/%(title)s.%(ext)s -f'
-command='-no-mtime -o /storage/emulated/0/Download/Video/%(title)s.%(ext)s -f'
+command='-no-mtime -o /storage/emulated/0/Videos/%(title)s.%(ext)s -f'
 #read option
 
 #if [ "$option" -eq "1" ]
