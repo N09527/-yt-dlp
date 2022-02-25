@@ -11,7 +11,7 @@ pkg install -y python
 
 python -m pip install --upgrade pip yes
 
-pip install pip install -U yt-dlp
+pip install -U yt-dlp
 
 
 mkdir ~/bin
