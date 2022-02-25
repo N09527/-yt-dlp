@@ -1,0 +1,13 @@
+
+echo " Video files are saved in Downloads/Video"
+
+read option
+
+url=$1
+
+then
+    clear
+    yt-dlp --no-mtime -o "~/storage/downloads/Video/%(title)s.%(ext)s" -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b' $1 $url
+termux-notification --title "YouTube-DLP" --content "Download Complete: $url"
+
+fi
