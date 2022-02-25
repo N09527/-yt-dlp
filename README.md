@@ -20,7 +20,7 @@ mkdir -p ~/.config/youtube-dl
 mkdir ~/bin
 
 
-curl https://raw.githubusercontent.com/N09527/youtube-dl/main/ytdl -o ~/bin/termux-url-opener
+curl https://raw.githubusercontent.com/N09527/yt-dlp/main/ytdlp -o ~/bin/termux-url-opener
 
 
 
