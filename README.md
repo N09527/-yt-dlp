@@ -11,10 +11,7 @@ pkg install -y python
 
 python -m pip install --upgrade pip yes
 
-pip install youtube-dl
-
-
-mkdir -p ~/.config/youtube-dl
+pip install pip install -U yt-dlp
 
 
 mkdir ~/bin
