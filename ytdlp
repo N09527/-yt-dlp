@@ -33,9 +33,9 @@ url=$1
 #
 #elif [ "$option" -eq "3" ]
 #then
-    clear
+#    clear
     yt-dlp --no-mtime -o "~/storage/downloads/Videos/%(title)s.%(ext)s" -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b' $1 $url
-termux-notification --title "YouTube-DLP" --content "Download Complete: $url"
+#termux-notification --title "YouTube-DLP" --content "Download Complete: $url"
 	
 #elif [ "$option" -eq "4" ]
 #then
@@ -51,4 +51,4 @@ termux-notification --title "YouTube-DLP" --content "Download Complete: $url"
 #    yt-dlp --no-mtime -o "~/storage/downloads/Media/Video/%(title)s.%(ext)s" -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b' $1 $url
 #termux-notification --title "YouTube-DLP" --content "Download Complete: $url"
 	
-fi && exit
+&& exit
